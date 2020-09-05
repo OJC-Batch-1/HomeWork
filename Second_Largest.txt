@@ -1,0 +1,1 @@
+Write a Java Program to find second largest element in array. Only use single for loop and don't use any built API like collection or sort
