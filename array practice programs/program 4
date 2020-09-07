@@ -1,0 +1,56 @@
+/*write a java program to add two add of the same size*/
+import java.util.*;
+public class fourth {
+
+	public static void main(String[] args) {
+		 
+	      System.out.println("enter number of rows of matrix : ");
+	      Scanner sc = new Scanner(System.in);
+	      int a = sc.nextInt();
+	      System.out.println("enter number of columns of matrix : ");
+	      Scanner sc1 = new Scanner(System.in);
+	      int b = sc1.nextInt();
+	      int arr1[][] = new int[a][b];
+	      int arr2[][] = new int[a][b];
+	      int add[][] = new int[a][b];
+	 
+	      System.out.println("enter elements of the first matrix : ");
+	 
+	      for (int  i = 0 ; i < a ; i++ ) {
+	         for ( int j = 0 ; j < b ; j++ ) {
+	            arr1[i][j] = sc.nextInt();
+	         }
+	      }
+	 
+	      System.out.println("enter the elements of second matrix : ");
+	 
+	      for (int  i = 0 ; i < a ; i++ ) {
+		         for ( int j = 0 ; j < b ; j++ ) {
+		            arr2[i][j] = sc.nextInt();
+		         }
+	      }
+	      
+	      /* addition of the 2 matrices*/
+	   
+	        for ( int i = 0 ; i < a ; i++ ) {
+	           for (int j = 0 ; j < b ; j++ ) {
+	               add[i][j] = arr1[i][j] + arr2[i][j]; 
+	           }
+	        }
+	        
+	        /*display the output of the addition of the matrices*/
+	   
+	        System.out.println("addition of the two matrices are :");
+	   
+	        for (int i = 0 ; i < a ; i++ )
+	        {
+	           for (int j = 0 ; j < b ; j++ )
+	              System.out.println(add[i][j]+"\t");
+	   
+	           System.out.println();
+	        }
+
+
+	}
+
+}
