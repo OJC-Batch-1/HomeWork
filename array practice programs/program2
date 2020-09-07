@@ -1,0 +1,40 @@
+/*write a java program to insert a specific element*/
+
+import java.util.Scanner;
+
+public class second {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the size of array : ");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();  
+		int[] array = new int[n+1];  
+		System.out.println("Enter the elements of the array: ");  
+		for(int i=0; i<n; i++)  
+		{     
+		array[i]=sc.nextInt();  
+		} 
+		
+		System.out.println("Enter the element to be inserted  : ");
+		Scanner sc2 = new Scanner(System.in);
+		int element = sc2.nextInt();
+		
+		System.out.println("Enter the index at which element to be inserted  : ");
+		Scanner sc3 = new Scanner(System.in);
+		int index = sc2.nextInt();
+		
+		for (int i = n ; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = element;
+        n++;
+ 
+        System.out.println(" now the array will be : ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(array[i] + " ");
+        }
+		
+
+	}
+
+}
