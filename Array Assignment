@@ -1,0 +1,115 @@
+package com.onlineClass.warmup;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayImplementation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		removeElementFromArray();
+		insertEle();
+		dublicateEleCount();
+		
+
+	}
+	
+	public static void removeElementFromArray() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of Element");
+		int numOfELement = sc.nextInt();
+		
+		
+		int[] ele = new int[numOfELement]; 
+		System.out.println("Enter Element in Array");
+		for(int i = 0; i<numOfELement; i++) {
+			ele[i] = sc.nextInt();		
+		}
+		
+		System.out.println("Enter the element you want to remove");
+		int removeEle = sc.nextInt();
+		
+		//Logic to remove element
+		for(int i = 0; i<ele.length; i++) {
+			if(ele[i]==removeEle) {
+				continue;
+			}
+		System.out.print(ele[i]+" ");
+		//logic end
+		
+		}
+		
+				
+	}
+	
+	public static void insertEle() {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of Element");
+		int numOfELement = sc.nextInt();
+		
+		
+		int[] ele1 = new int[numOfELement]; 
+		System.out.println("Enter Element in Array");
+		for(int i = 0; i<numOfELement; i++) {
+			ele1[i] = sc.nextInt();		
+		}
+		
+		System.out.println("Enter the element you want to insert");
+		int addEle = sc.nextInt();
+		
+		System.out.println("Enter the index for added element");
+		int index = sc.nextInt();
+		
+		//Logic to insert element
+		for(int i = ele1.length-1; i>index; i--) {
+			ele1[i]=ele1[i-1];
+		}
+		
+		ele1[index] = addEle;
+		
+		for(int i = 0; i<ele1.length; i++) {
+			System.out.println(ele1[i]+ " ");
+		}
+		
+	}
+	
+public static void dublicateEleCount() {
+	
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of Element");
+		int numOfELement = sc.nextInt();
+		
+		
+		int[] ele1 = new int[numOfELement]; 
+		System.out.println("Enter Element in Array");
+		for(int i = 0; i<numOfELement; i++) {
+			ele1[i] = sc.nextInt();		
+		}
+			
+		//Logic to count dublicate element
+		for (int i = 0; i<ele1.length;i++) {
+			int count = 0;
+			
+			for(int j = 0; j< ele1.length; j++) {
+				if(ele1[j] == ele1[i]) {
+					count++;
+				
+				}
+				
+			}
+			
+			if(count>1 ) {
+			System.out.println(ele1[i]+ " = " + count);
+			}
+			
+		}
+
+		
+		
+	}
+
+}
