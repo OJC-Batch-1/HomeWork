@@ -1,0 +1,36 @@
+/*write a java program to remove a specific element from an array*/
+import java.util.Scanner;
+
+public class first {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the size of array : ");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();  
+		int[] array = new int[n];  
+		System.out.println("Enter the elements of the array: ");  
+		for(int i=0; i<n; i++)  
+		{     
+		array[i]=sc.nextInt();  
+		} 
+		
+		System.out.println("Enter the element of array to be deleted : ");
+		Scanner sc2 = new Scanner(System.in);
+		int element = sc2.nextInt();
+		for(int i = 0; i < array.length; i++){
+			if(array[i] == element){
+				for(int j = i; j < array.length - 1; j++){
+					array[j] = array[j+1];
+				}
+				break;
+			}
+		}
+		
+		System.out.println("Array elements after deletion-- " );
+		for(int i = 0; i < array.length-1; i++){
+			System.out.print(" " + array[i]);
+		}  
+
+	}
+
+}
