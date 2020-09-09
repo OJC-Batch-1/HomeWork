@@ -1,0 +1,161 @@
+// 1.  REMOVE SPECIFIC ELEMENT:
+
+import java.util.Scanner;
+
+public class RemoveSpecificElement {
+
+	static void removeKeyValue(int arr[], int key) {
+		
+		int k = 0, length = arr.length;
+		for(int j=0; j<arr.length; j++) {
+			if(key != arr[j]) {
+				arr[k] = arr[j];
+				k++;
+			}
+			else {
+			    length = length - 1;
+			    System.out.println(length);
+			}
+		}
+		for(int i=0; i<k; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		for(int i=0; i<n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		int key = sc.nextInt();
+		
+		removeKeyValue(arr,key);
+	}
+}
+  
+
+
+
+//2. INSERT ELEMENT AT SPECIFIC INDEX:
+
+import java.util.Scanner;
+
+public class InsertSpecificElementAtIndex {
+
+	static void insertElement(int[] arr, int n, int position, int element) {
+
+		int newArr[] = new int[n + 1];
+		for (int i = 0; i < n + 1; i++) {
+			if (i < position - 1)
+				newArr[i] = arr[i];
+			else if (i == position - 1)
+				newArr[i] = element;
+			else
+				newArr[i] = arr[i - 1];
+		}
+
+		for (int i = 0; i < n+1; i++)
+			System.out.print(newArr[i] + " ");
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+		for (int i = 0; i < n; i++) {
+			System.out.print(arr[i] + " ");
+		}
+
+		int position = sc.nextInt();
+		int element = sc.nextInt();
+
+		insertElement(arr, n, position, element);
+	}
+
+
+
+
+// 3. DUPLICATE ELEMENTS:
+
+import java.util.Scanner;
+
+public class DuplicateValues {
+
+	static void findDuplicate(int arr[]) {
+		int count = 0;
+		for(int i=0; i<arr.length; i++) {
+			count = 0;
+			for(int j=0; j<arr.length; j++) {
+				if(arr[i] == arr[j]) {
+					count++;
+				}
+				if(i > j && arr[i]==arr[j])
+					break;
+				if(j==arr.length-1 && count>1)
+					System.out.print(arr[i] + " " + count + "\n");
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		for (int i = 0; i < n; i++) 
+			arr[i] = sc.nextInt();
+		
+		findDuplicate(arr);
+	}
+}
+
+
+
+import java.util.Scanner;
+
+// 4. ADDITION OF TWO MATRICES:
+
+public class TwoMatrixSum {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int row = sc.nextInt();
+		int col = sc.nextInt();
+		int matrix1[][] = new int[row][col];
+		int matrix2[][] = new int[row][col];
+		for(int i=0; i<row; i++) {
+			for(int j=0; j<col; j++) {
+				matrix1[i][j] = sc.nextInt();
+			}
+		}
+		for(int i=0; i<row; i++) {
+			for(int j=0; j<col; j++) {
+				matrix2[i][j] = sc.nextInt();
+			}
+		}
+		
+		int sum[][] = new int[row][col];
+		
+		for(int i=0; i<row; i++) {
+			for(int j=0; j<col; j++) {
+				sum[i][j] = matrix1[i][j] + matrix2[i][j];
+				System.out.print(sum[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+}
+
+
