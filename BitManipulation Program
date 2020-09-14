@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class BitManupulation {
+
+  /************** 1.Given integer is even or odd. ********************/
+  
+	public static void EvenOdd(int x) {
+		System.out.println(((x&1)==1)?"Odd":"Even");
+	}
+	
+   /************** 2.Detect if two integer have opposite sign or not.  ********************/
+   
+	public static void CheckSign(int x,int y) {
+		System.out.println(((x^y)<0)?"true":"false");
+	}
+	
+   /************** 3.Add one to given integer. ********************/
+   
+	public static void AddOne(int x) {
+		
+		System.out.println(-(~x));
+	}
+	
+   /************** 4. Swap two numbers.********************/
+   
+	public static void Swapping(int x,int y) {
+		x=x^y;
+		y=x^y;
+		x=x^y;
+		System.out.printf("x = %d  y = %d ",x,y);
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		//EvenOdd(a);
+		  //AddOne(a);
+		int b=sc.nextInt();
+		//CheckSign(a,b);
+		
+		Swapping(a,b);
+		
+	}
+
+}
