@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+/*Add one to given integer 
+Input : 8 , output : 9*/
+
+public class addone {
+
+	public static void main(String[] args) {
+		System.out.println("Enter any number : ");
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		System.out.println("number after adding 1 is " + (a ^ 1));
+	}
+
+}
