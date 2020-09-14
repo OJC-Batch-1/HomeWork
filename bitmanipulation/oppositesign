@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+/*Detect if two integer have opposite sign or not 
+Ex : input : 8  and -4
+Output : true
+Explanation : 8 is +ve and -4 is -ve, hence both are opposite sign*/
+
+public class oppositesign {
+
+	public static void main(String[] args) {
+		System.out.println("Enter first number : ");
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		System.out.println("Enter second number : ");
+		Scanner sc1=new Scanner(System.in);
+		int b=sc1.nextInt();
+		if((a ^ b) <0)
+		{
+			System.out.println("Both number are of opposite sign");
+		}
+		else
+		{
+			System.out.println("Both number are of same sign");
+
+		}
+		
+	}
+
+}
