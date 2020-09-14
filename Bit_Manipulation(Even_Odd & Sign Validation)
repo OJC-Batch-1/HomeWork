@@ -1,0 +1,31 @@
+package com.onlineClass.warmup;
+
+public class CheckEvenOdd_BitWise {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println(checkEvenOrOdd(7));
+		System.out.println(ifOppositeSign(9,6));
+		
+
+	}
+	
+	
+	public static String checkEvenOrOdd(int n){
+		
+		String str = ((n & 1) == 1) ? "Odd" : "Even";
+		
+		return str;
+		
+	}
+	
+    public static String ifOppositeSign(int n1, int n2){
+		
+		String str =(n1 >= 0) ^ (n2 < 0) ? "Both have same sign" : "Both have different sign";
+		
+		return str;
+		
+	}
+
+}
