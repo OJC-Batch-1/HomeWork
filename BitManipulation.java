@@ -1,56 +1,25 @@
-package com.onlinejava;
-
 import java.util.Scanner;
-
-public class BitManipulation {
-
-	Scanner sc = new Scanner(System.in);
-
-	public static void main(String[] args) {
-
-		BitManipulation bit = new BitManipulation();
-		System.out.println(".........Given integer is even or not................");
-		bit.checkEvenOrOdd();
-		System.out.println("..........Detect two integer is opposite sign or not..............");
-		bit.oppositeSignOrNot();
-		System.out.println("...........Add one to given integer............");
-		bit.addOne();
-		System.out.println("...........Swap two numbers....................");
-		bit.swap();
-
+class BitManipulation{
+	static boolean even_odd(int n){
+		String str=(((n & 1)!=1)==true ? "Even" : "odd");
+		System.out.println(str);
+		return ((n & 1)!=1);
 	}
-
-	private void checkEvenOrOdd() {
-		System.out.print("Enter a number : ");
-		int n = sc.nextInt();
-		System.out.println(((n & 1) == 0) ? "Even" : "Odd");
+	static boolean oppositeSign(int n,int m){
+		return ((n ^ m) < 0);  
+    } 
+ public static void main(String arg[]){
+Scanner sc=new Scanner(System.in);
+System.out.println("enter two elements:: ");
+int n=sc.nextInt();
+int m=sc.nextInt();
+	even_odd(n);
+	if (oppositeSign(n,m) == true) 
+            System.out.println("Signs are opposite"); 
+        else
+            System.out.println("both numbers are of same sign"); 
+	
 	}
-
-	private void oppositeSignOrNot() {
-		System.out.println("Enter two numbers : ");
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		if ((a ^ b) >= 0) {
-			System.out.println("Given number is in Same Sign");
-		} else {
-			System.out.println("Given number is in Opposite Sign");
-		}
-	}
-
-	private void addOne() {
-		System.out.print("Enter number : ");
-		int num = sc.nextInt();
-		System.out.println(-(~num));
-	}
-
-	private void swap() {
-		System.out.print("Enter two number : ");
-		int a = sc.nextInt();
-		int b = sc.nextInt();
-		a = a ^ b;
-		b = a ^ b;
-		a = a ^ b;
-		System.out.println("After swap\n" + "a : " + a + "   b : " + b);
-	}
-
 }
+		
+	
