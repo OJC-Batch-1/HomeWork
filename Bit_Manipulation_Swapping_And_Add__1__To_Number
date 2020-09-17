@@ -1,0 +1,28 @@
+package com.onlineClass.warmup;
+
+class Bitwise2 
+{ 
+    static int addOne(int x) 
+    { 
+         return (-(~x)); 
+    }
+    
+    // Swap two number without third variable
+    static void swapNumber(int x, int y) 
+    { 
+        System.out.println("Before Swapping: Value of x = " + x + "Value of y = "+ y);
+    	 x = x ^ y;
+         y = x ^ y;
+         x = x ^ y;
+         System.out.println("After Swapping: Value of x = " + x + "Value of y = "+ y);
+         
+         
+    }
+     
+    // Add 1 to number
+    public static void main(String[] args) 
+    { 
+        System.out.println("result =" +addOne(5));
+        swapNumber(10, 20);
+    } 
+} 
