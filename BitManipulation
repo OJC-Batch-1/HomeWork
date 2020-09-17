@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class BitManipulation {
+	
+//	1. ***************************************
+	static void checkEvenOdd(int n) {
+		if((n & 1) == 1)
+			System.out.println("Odd");
+		else
+			System.out.println("Even");
+	}
+	
+	
+  
+//	2. ****************************************
+	
+	static void detectSign(int a, int b) {
+		if((a ^ b) >= 0)
+			System.out.println("Same sign");
+		else
+			System.out.println("Different sign");
+	}	
+	
+	
+	
+//  3. *************************************
+
+	static void addOne(int n) {
+		int add = n | 1;
+		System.out.println(add);
+	}
+	
+  
+	
+//	4. *****************************************
+	
+	static void swap(int x, int y) {
+		x = x ^ y;
+		y = x ^ y;
+		x = x ^ y;
+		System.out.println("After swapping : " + x + " " + y);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int n1 = sc.nextInt();
+		checkEvenOdd(n);
+		addOne(n);
+		detectSign(n,n1);
+		swap(n, n1);
+	}
+
+}
