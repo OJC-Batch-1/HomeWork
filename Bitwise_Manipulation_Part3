@@ -1,0 +1,43 @@
+package com.onlineClass.warmup;
+
+import java.util.*;
+public class Sample2
+{
+    public static void main(String[] args)
+    {
+    	//lower_ToUpperCase();
+    	upper_ToLower();
+    	System.out.println("Position of Aplhabets"+ findPositionOfAlphabets());
+    	
+    }
+    
+    
+    public static void lower_ToUpperCase() {
+    	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any lowercase character");
+        char a = sc.next().charAt(0);
+        int r = (a&(~32));
+        System.out.println(a+" ======"+((char)r));
+    	
+    }
+    
+    public static void upper_ToLower() {
+    	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter any Uppercase character");
+        char a = sc.next().charAt(0);
+        int r = (a|(32));
+        System.out.println(a+" ======"+((char)r));
+    	
+    }
+    
+    public static int findPositionOfAlphabets() {
+    	        Scanner sc = new Scanner(System.in);
+                System.out.println("Enter a letter: ");
+                char letter= sc.next().charAt(0); 
+    			char inputLetterToLowerCase= Character.toUpperCase(letter);
+    			int asciiValueOfinputChar= (int)inputLetterToLowerCase;
+    			int position= asciiValueOfinputChar-64;
+    			return position;
+    	
+    }
+}
