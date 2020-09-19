@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class upperandlower {
+
+	/*Conevrt Uppercase  character to Lowercase*/
+
+	static void UpperToLower(char[] ch)	{
+		for(int i=0;i<ch.length;i++) {
+			ch[i]=(char)(ch[i]|32);
+			System.out.print(ch[i]);
+		}
+	}
+
+	/*Conevrt Lowercase  character to Uppercase*/
+
+	static void LowerToUpper(char[] ch)	{
+		for(int i=0;i<ch.length;i++) {
+			ch[i]=(char)(ch[i]^32);
+			System.out.print(ch[i]);
+		}
+	}
+
+	/*Letter Position of  Uppercase Alphabets.*/
+
+	static void Position(char[] a)	{
+		int difference=a[0] - 64;
+		int position=a[0] & diff;
+		System.out.print(position);
+	}
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+
+		UpperToLower(str.toCharArray());
+		LowerToUpper(str.toCharArray());
+		Position(str.toCharArray());
+	}
+
+}
