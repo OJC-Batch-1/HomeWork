@@ -1,0 +1,31 @@
+package bitManipulation;
+
+import java.util.Scanner;
+
+public class Date19 {
+	
+	static void upperCase(char ch) {
+		int x = ch ^ 32;
+		System.out.println((char)x);
+	}
+
+	static void lowerCase(char ch) {
+		int y = ch ^ 32;
+		System.out.println((char)y);
+	}
+	
+	
+	static void printPosition(char ch) {
+		int a = (int)ch ^ 64;
+		System.out.println(a);
+	}
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		char ch = sc.next().charAt(0);
+//		upperCase(ch);
+//     	lowerCase(ch);
+		printPosition(ch); 
+	}
+
+}
