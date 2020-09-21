@@ -1,0 +1,12 @@
+import java.util.*;
+public class bit_even_odd
+{
+    public static void main(String[]args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the number:");
+        int n=sc.nextInt();
+        System.out.println((n&1)==1?"odd":"even");
+
+    }
+}
