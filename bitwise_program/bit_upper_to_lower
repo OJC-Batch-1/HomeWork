@@ -1,0 +1,15 @@
+import java.util.*;
+public class bit_upper_to_lower
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter uppercase character :");
+        int a = sc.next().charAt(0);
+        int b=a;
+        int x = 32;
+        int r = (a|x);
+        System.out.println(((char)a)+" -> "+((char)r));
+        
+    }
+}
