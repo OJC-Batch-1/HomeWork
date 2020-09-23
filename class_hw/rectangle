@@ -1,0 +1,29 @@
+public class rectangle_class
+{
+    public static void main(String []args)
+    {   rectangle rect1=new rectangle(5,6);
+        rect1.parameter();
+        rect1.area();
+
+    }
+}
+class rectangle
+{
+    int a;
+    int b;
+    public rectangle(int a,int b)
+    {
+        this.a=a;
+        this.b=b;
+    }
+    public void area()
+    {
+        int are=a*b;
+        System.out.println("Area = "+are);
+    }
+    public void parameter()
+    {
+        int peri=2*(a+b);
+        System.out.println("perimeter = "+peri);
+    }
+}
