@@ -1,0 +1,24 @@
+public class triangle_class
+{
+    public static void main(String[] args)
+    {
+        Triangle tri = new Triangle(4,5,6);
+        tri.getAreaPerimeter();
+    }
+}
+class Triangle{
+    int a;
+    int b;
+    int c;
+
+    public Triangle(int a, int b, int c){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+    public void getAreaPerimeter(){
+        int p = a+b+c;
+        double ar = (0.5*b*c);
+        System.out.println("Perimeter = "+p+"\nArea = "+ar);
+    }
+}
