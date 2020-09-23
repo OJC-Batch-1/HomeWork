@@ -1,0 +1,54 @@
+import java.util.*;
+public class complex_class
+{
+    public static void main(String[]args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the real and imaginary part of 1st complex number:\n");
+        int i=sc.nextInt();
+        int j=sc.nextInt();
+        System.out.println("enter the real and imaginary part of 2nd complex number:\n");
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        complex comp=new complex(i,j,m,n);
+        comp.add();
+        comp.difference();
+        comp.multiply();
+
+    }
+}
+class complex
+{
+    int i;
+    int j;
+    int m;
+    int n;
+
+    public complex(int i,int j,int m,int n)
+    {
+        this.i=i;
+        this.j=j;
+        this.m=m;
+        this.n=n;
+    }
+        public void add()
+        {
+            int sum_real=i+m;
+            int sum_imag=j+n;
+            System.out.println("after adding = "+sum_real+"+"+sum_imag+"j");
+
+        }
+        public void difference()
+        {
+            int diff_real=i-m;
+            int diff_imag=j-n;
+            System.out.println("after substraction = "+diff_real+"+"+diff_imag+"j");
+        }
+        public void multiply()
+        {
+            int multi_real=((i*m)-(n*j));
+            int multi_imag=((i*n)+(j*m));
+            System.out.println("after multiplication = "+multi_real+"+"+multi_imag+"j");
+        }
+    
+}
