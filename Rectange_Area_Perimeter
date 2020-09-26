@@ -1,0 +1,33 @@
+package com.onlineClass.warmup;
+
+public class Geometry {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Rectangle r1 = new Rectangle(4f, 7f);
+		Rectangle r2 = new Rectangle(5f, 10f);
+	}
+
+}
+
+
+class Rectangle{
+	float a; 
+	float b;
+	public Rectangle(float a, float b) {
+		this.a = a;
+		this.b = b;
+		System.out.println(area());
+		System.out.println(getParameter());
+	}
+	
+	public float area() {
+		return a*b;
+	}
+	
+	public float getParameter() {
+		return 2*(a*b);
+		
+	}
+}
