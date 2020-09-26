@@ -1,0 +1,39 @@
+package com.onlineClass.warmup;
+
+public class Employee_CS {
+	static {
+		System.out.println("Name\t\t\tYear of joining\t\t\tAddress");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee1 empl = new Employee1("Naveen", "1993", "EC City");
+		Employee1 emp2 = new Employee1("Jean", "1986", "Austin USA");
+		Employee1 emp3 = new Employee1("venkat", "1999", "California");
+		
+	}
+}
+
+
+
+class Employee1{
+	String name;
+	String date;
+	String Address;
+	
+	
+	public Employee1(String name, String date, String Address) {
+		this.name = name;
+		this.date = date;
+		this.Address = Address;
+		getInfo();
+		
+	}
+	
+	
+	public void getInfo(){
+		System.out.println(name+"\t\t\t"+date+"\t\t\t\t"+Address);
+		
+	}
+	
+}
