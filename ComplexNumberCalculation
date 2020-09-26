@@ -1,0 +1,53 @@
+package com.onlineClass.warmup;
+class ComplexNumberCalculation{
+	  public static void main(String[] args){
+	    Complex c1 = new Complex(4,5);
+	    Complex c2 = new Complex(9,4);
+
+	    Complex cadd = Complex.sum(c1,c2);
+	    Complex cdiff = Complex.difference(c1,c2);
+	    Complex cprod = Complex.product(c1,c2);
+	    cadd.printComplex();
+	    cdiff.printComplex();
+	    cprod.printComplex();
+	  }
+	}	
+
+
+
+class Complex{
+  int real;
+  int imaginary;
+  
+  public Complex(int real, int imaginary){
+    this.real = real;
+    this.imaginary = imaginary;
+  }
+
+  public static Complex sum(Complex a, Complex b){
+    return new Complex((a.real+b.real),(a.imaginary+b.imaginary));
+  }
+
+  public static Complex difference(Complex a, Complex b){
+    return new Complex((a.real-b.real),(a.imaginary-b.imaginary));
+  }
+
+  public static Complex product(Complex a, Complex b){
+    return new Complex(((a.real*b.real)-(a.imaginary*b.imaginary)),((a.real*b.imaginary)+(a.imaginary*b.real)));
+  }
+
+  public void printComplex(){
+    if(real == 0 && imaginary!=0){
+      System.out.println(imaginary+"i");
+    }
+    else if(imaginary == 0 && real!=0){
+      System.out.println(real);
+    }
+    else{
+      System.out.println(real+"+"+imaginary+"i");
+    }
+  }
+
+}
+
+			
