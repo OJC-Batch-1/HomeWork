@@ -1,0 +1,43 @@
+import java.util.*;
+public class complexnumber
+{
+    public static void main(String[] args)
+    {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the real numbers : ");
+        int x = sc.nextInt();
+        int z = sc.nextInt();
+        System.out.println("Enter the imaginary numbers : ");
+        int y = sc.nextInt();
+        int w = sc.nextInt();
+        Complex comp = new Complex(x,y,z,w);
+        comp.getSum();
+        comp.getDifference();
+        comp.getProduct();
+    }
+}
+class Complex{
+    int x,y,z,w;
+    public Complex(int x, int y, int z, int w){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.w = w;
+    }
+    public void getSum(){
+        int sumofreal = x+z;
+        int sumofimaginary = y+z;
+        System.out.println("Sum = "+sumofreal+"+"+sumofimaginary+"j");
+    }
+    public void getDifference(){
+        int differenceofreal = x-z;
+        int diffofimaginary = y-w;
+        System.out.println("Difference = "+differenceofreal+"+"+differenceofimaginary+"j");
+    }
+    public void getProduct(){
+        int productofreal = (x*z)-(y*w);
+        int productofimaginary = (x*w)+(y*z);
+        System.out.println("Product = "+productofreal+"+"+productofimaginary+"j");
+    }
+}
