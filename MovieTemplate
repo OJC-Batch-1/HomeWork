@@ -1,0 +1,73 @@
+package com.onlineClass.warmup;
+
+public class MovieTemplate {
+	
+	public static void main(String args[]) {
+		Movie m1 = new Movie("Casino Royale","EonProductions","PG");
+		Movie m2 = new Movie("Casino Royale","EonProductions","PG14");
+		Movie m3 = new Movie("Casino Royale","EonProductions","PG29");
+		Movie m4 = new Movie("Casino Royale","EonProductions","PG14");
+		
+		
+		/*
+		 * d) Write a piece of code that creates an instance of the class Movie with the
+		 * title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”.
+		 */
+
+		Movie m5 = new Movie("Casino Royale","Eon Productions","PG13");
+		
+	}
+
+}
+
+class Movie{
+	
+	private String title;
+	private String studio; 
+	private String rating; 
+	
+	/*
+	 * a) Write a constructor for the class Movie, which takes a String representing
+	 * the title of the movie, a String representing the studio, and a String
+	 * representing the rating as its arguments, and sets the respective class
+	 * variables to these values.
+	 */ 
+	Movie(String title, String studio, String rating){
+		this.title = title;
+		this.studio = studio;
+		this.rating = rating;
+	}
+	
+	/*
+	 * b) Write a second constructor for the class Movie, which takes a String
+	 * representing the title of the movie and a String representing the studio as
+	 * its arguments, and sets the respective class variables to these values, while
+	 * the class variable rating is set to "PG".
+	 */
+	public Movie (String t, String s) {
+		 this.title = t;
+		this.studio = s;
+		rating = "PG";
+		}
+	
+	
+		/*
+		 * c) Write a method getPG, which takes an array of base type Movie as its
+		 * argument, and returns a new array of only those movies in the input array
+		 * with a rating of "PG". You may assume the input array is full of Movie
+		 * instances. The returned array need not be full.
+		 */
+	public static Movie[] getPG(Movie[] movie) {
+		 Movie[] pg = new Movie[movie.length];
+		 int pos = 0;
+		 for (int i = 0; i < movie.length; i++) {
+		 if (movie[i].rating.equals("PG")) {
+			 pg[pos] = movie[i];
+			 pos++;
+		 }
+		 }
+		 return pg;
+		}
+		 
+
+}
