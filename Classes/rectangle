@@ -1,0 +1,23 @@
+public class Rectangle
+{
+    public static void main(String[] args)
+    {
+        Rectangle rectangle1 = new Rectangle(10,20);
+        System.out.println("Area = "+rectangle1.Area()+"\nPerimeter = "+rectangle1.getPerimeter());
+    }
+}
+class Rectangle{
+    int x,y;
+
+    public Rectangle(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+    public int Area(){
+        return (x*y);
+    }
+    public int getPerimeter(){
+        return 2*(x+y);
+    }
+    
+}

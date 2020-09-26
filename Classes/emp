@@ -1,0 +1,27 @@
+public class emp
+{
+    public static void main(String[] args)
+    {
+        Emp1 E1 = new Emp1("Robert",1994,"64C-WallsStreat");
+        Employee1 E2 = new Emp1("Sam",2000,"68D-WallsStreat");
+        Empl1 E3 = new Emp1("John",1999,"26B-WallsStreat");
+        System.out.println("Name\tYear of joining\tAddress");
+        E1.getEmployeeDetail();
+        E2.getEmployeeDetail();
+        E3.getEmployeeDetail();
+
+    }
+}
+class Emp1{
+    String name;
+    int yoj;
+    String address;
+
+    public Emp1(String name, int yoj, String address){
+        this.name = name;
+        this.yoj = yoj;
+        this.address = address;
+    }
+    public void getEmployeeDetail(){
+        System.out.println(name+"\t"+yoj+"\t\t"+address);
+    }
