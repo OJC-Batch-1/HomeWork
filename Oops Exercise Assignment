@@ -1,0 +1,124 @@
+package com.test;
+
+public class Geometry {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Circle c = new Circle();
+		System.out.println(c.area());
+		c.draw();
+		c.fillColour();	
+
+	}	
+
+}
+
+
+interface GeoDefine{
+	abstract void draw();
+	abstract double area();
+	abstract void fillColour();
+}
+
+class Circle implements GeoDefine{
+
+	
+	 public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drwaing Circle");
+		
+	}
+
+	
+	public double area() {
+		// TODO Auto-generated method stub\
+		int radius = 7;
+		return 3.14*radius;
+	}
+
+
+	@Override
+	public void fillColour() {
+		// TODO Auto-generated method stub
+		System.out.println("Red");
+	}
+	
+}
+
+class Rectangle implements GeoDefine{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drwaing Rectangle");
+		
+	}
+
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		int len = 6;
+		int width = 10;
+		return len*width;
+	}
+
+	@Override
+	public void fillColour() {
+		// TODO Auto-generated method stub
+		System.out.println("black");
+	}
+	
+	
+}
+
+class Triangle implements GeoDefine{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing Triangle");
+		
+	}
+
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		
+		int b=6;
+		int alt =10;
+		return 0.5*b*alt;
+	}
+
+	@Override
+	public void fillColour() {
+		// TODO Auto-generated method stub
+		System.out.println("Pink");
+		
+	}
+	
+}
+
+class Line implements GeoDefine{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing Line");
+		
+	}
+
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void fillColour() {
+		// TODO Auto-generated method stub
+		System.out.println("White");
+		
+	}
+	
+}
