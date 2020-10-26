@@ -1,0 +1,104 @@
+package Practice;
+
+public class PaintBrush {
+
+	public static void main(String[] args) {
+		
+       Circle c = new Circle();
+       Rectangle r = new Rectangle();
+       Triangle t = new Triangle();
+       Line l = new Line();
+       c.draw();
+       System.out.println(c.findArea());
+       c.addColor();
+       System.out.println("---------------------");
+       r.draw();
+       System.out.println(r.findArea());
+       
+       c.addColor();
+       System.out.println("---------------------");
+       t.draw();
+       System.out.println(t.findArea());
+      
+       c.addColor();
+       System.out.println("---------------------");
+       l.draw();
+       System.out.println(l.findArea());
+       
+	}
+
+}
+interface Shape {
+	
+	public default void addColor() {
+		System.out.println("Red");
+	}
+	void draw();
+	double findArea();
+}
+
+class Circle implements Shape{
+	
+	public void draw() {
+		System.out.println("Drawing Circle");
+	}
+	public double findArea() {
+		int r=5;
+		return 3.14*r*r;
+	}
+
+}
+		
+class Rectangle implements Shape{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing Rectangle");
+	}
+
+	@Override
+	public double findArea() {
+		// TODO Auto-generated method stub
+		int l=5, b=6;
+		return l*b;
+	}
+
+	
+}
+class Triangle implements Shape{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing Triangle");
+	}
+
+	@Override
+	public double findArea() {
+		// TODO Auto-generated method stub
+		int a=3, b=4, c=5;
+		return 0.5*b*c;
+	}
+
+	
+	
+}
+class Line implements Shape{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing Line");
+	}
+
+	@Override
+	public double findArea() {
+		// TODO Auto-generated method stub
+		int l=8;
+		return 0;
+	}
+
+	
+	
+}
