@@ -1,28 +1,22 @@
-package com.design;
 
-public class Rectangle implements Shape {
 
-	int length, breadth;
-
-	public Rectangle(int length, int breadth) {
-		this.length = length;
-		this.breadth = breadth;
+public class Rectangle {
+	static int Area(int a, int b)
+	{
+		int area=a*b;
+		return area;
 	}
-
-	@Override
-	public void draw() {
-		System.out.println("Drawing Rectangle");
+	static int Perimeter(int a, int b) {
+		int perimeter = 2*(a+b);
+		return perimeter;
 	}
-
-	@Override
-	public void getArea() {
-		int area = length * breadth;
-		System.out.println("Area of Rectangle : " + area);
+	public static void main(String[] args) {
+		int a= 5;
+		int b=4;
+		System.out.println("Area :"+Area(a,b));
+		System.out.println("Perimeter :"+Perimeter(a,b));
+		
 	}
-
-	@Override
-	public void fillColour() {
-		System.out.println("Colouring Rectangle as Yellow\n");
-	}
+	
 
 }

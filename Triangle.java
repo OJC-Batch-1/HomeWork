@@ -1,34 +1,31 @@
-package com.design;
-
-public class Triangle implements Shape {
-
-	double side1, side2, side3;
-
-	public Triangle(double side1, double side2, double side3) {
-		this.side1 = side1;
-		this.side2 = side2;
-		this.side3 = side3;
-	}
-
-	@Override
-	public void draw() {
-		System.out.println("Drawing Triangle");
-	}
-
-	@Override
-	public void getArea() {
-		double s = getPerimeter(side1, side2, side3);
-		double area = (double) Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
-		System.out.println("Area of Triangle : " + area);
-	}
-
-	public static double getPerimeter(double side1, double side2, double side3) {
-		return (side1 + side2 + side3) / 2;
-	}
-
-	@Override
-	public void fillColour() {
-		System.out.println("Colouring Triangle as Blue\n");
-	}
-
-}
+import java.util.*;
+public class Triangle {
+	
+	static float findArea(float a, float b, float c) 
+	    { 
+	        
+	        if (a < 0 || b < 0 || c <0 || (a+b <= c) || 
+	            a+c <=b || b+c <=a) 
+	        { 
+	            System.out.println("Not a valid triangle"); 
+	            System.exit(0); 
+	        } 
+	        float s = (a+b+c)/2; 
+	        return (float)Math.sqrt(s*(s-a)*(s-b)*(s-c)); 
+	    } 
+	          
+	    // Driver method 
+	    public static void main(String[] args)  
+	    { 
+	    	
+	    	Scanner sn = new Scanner(System.in);
+	    	System.out.println("Enter the three sides of triangle");
+	        float a =  sn.nextFloat();
+	        float b =  sn.nextFloat();
+	        float c =  sn.nextFloat();
+	    	
+	      
+	        System.out.println("Area is " + findArea(a, b, c));
+	    	
+	    } 
+	} 

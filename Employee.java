@@ -1,103 +1,27 @@
-package com.onlinejava;
 
-public class Employee implements Cloneable {
-
-	private int id;
-	private String name;
-	private int age;
-	private String designation;
-	private double salary;
-
-	private Address address;
-
-	private Account acc;
-
-	public Employee(int id, String name, int age, String designation, double salary, Address address, Account acc) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.designation = designation;
-		this.salary = salary;
-		this.address = address;
-		this.acc = acc;
-	}
-
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
-
-	public boolean equals(Employee emp) {
-		if (emp == null) {
-			return false;
+public class Employee {
+		String name;
+		int YOJ;
+		int salary;
+		String address;
+		
+	
+		
+		public Employee(String name,int YOJ,int salary,String address) {
+			this.name=name;
+			this.YOJ=YOJ;
+			this.salary=salary;
+			this.address=address;
 		}
-		if (this.id != emp.id) {
-			return false;
+		public static void main(String[]args) {
+			Employee e1=new Employee("Robert",1994,30000,"64C- WallsStreat");
+			Employee e2=new Employee("Sam",2000,25000,"68D- WallsStreat");
+			Employee e3=new Employee("John",1999,27000,"26B- WallsStreat");
+			System.out.println("Name\t\tYear of joining\t\tSalary\t\t\tAddress"); 
+			System.out.println(e1.name+"\t\t"+e1.YOJ+"\t\t\t"+e1.salary+"\t\t\t"+e1.address);
+			System.out.println(e2.name+"\t\t"+e2.YOJ+"\t\t\t"+e2.salary+"\t\t\t"+e2.address);
+			System.out.println(e3.name+"\t\t"+e3.YOJ+"\t\t\t"+e3.salary+"\t\t\t"+e3.address);
 		}
-		if (this.name != emp.name)
-			return false;
-		if (this.age != emp.age)
-			return false;
-		if (this.designation != emp.designation)
-			return false;
-		if (this.salary != emp.salary)
-			return false;
-		return true;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public String getDesignation() {
-		return designation;
-	}
-
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-
-	public double getSalary() {
-		return salary;
-	}
-
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public Account getAcc() {
-		return acc;
-	}
-
-	public void setAcc(Account acc) {
-		this.acc = acc;
-	}
+		
 
 }
