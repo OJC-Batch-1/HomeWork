@@ -1,0 +1,41 @@
+public class Account implements Cloneable {
+
+	private String bankName;
+	private long accountno;
+	private String accounttype;
+
+	public Account(String bankname, long accountno, String accounttype) {
+		this.bankname = bankname;
+		this.accountno = accountno;
+		this.accounttype = accounttype;
+	}
+
+	public Object Clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+	public String getBankname() {
+		return bankname;
+	}
+
+	public void setBankname(String bankname) {
+		this.bankname = bankname;
+	}
+
+	public long getAccountno() {
+		return accountno;
+	}
+
+	public void setAccountno(long accountno) {
+		this.accountno = accountno;
+	}
+
+	public String getaccounttype() {
+		return accounttype;
+	}
+
+	public void setaccounttype(String accounttype) {
+		this.accounttype = accounttype;
+	}
+
+}
