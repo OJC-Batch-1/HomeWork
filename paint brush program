@@ -1,0 +1,145 @@
+
+public class paint_brush_program
+{
+	public static void main(String[]args)
+	{ 	
+
+		rectangle rect = new rectangle(8,9);
+		rect.draw();
+		rect.area();
+		rect.colour();
+
+		circle circ = new circle(7);
+		circ.draw();
+		circ.area();
+		circ.colour();
+
+		triangle tri = new triangle(5, 4);
+		tri.draw();
+		tri.area();
+		tri.colour();
+
+		line l = new line();
+		l.draw();
+		l.area();
+		l.colour();
+		
+	}
+}
+interface shape{
+	public void draw();
+	public void area();
+	public void colour();
+	
+	
+}
+class rectangle implements shape{
+	int l,b;
+	public rectangle(int l,int b){
+		this.l=l;
+		this.b=b;
+	}
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing a rectangle!!!");
+		
+	}
+
+	@Override
+	public void area() {
+		// TODO Auto-generated method stub
+		System.out.println("area of rectangle = "+l*b);
+		
+	}
+
+	@Override
+	public void colour() {
+		// TODO Auto-generated method stub
+		System.out.println("clouring the rectangle as red!!");
+		
+	}
+	
+}
+ class triangle implements shape{
+	 int b,h;
+	 public triangle(int b,int h){
+		 this.b=b;
+		 this.h=h;
+	 }
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("drawing a triangle!!");
+		
+	}
+
+	@Override
+	public void area() {
+		// TODO Auto-generated method stub
+		System.out.println("area of the triangle = "+0.5*b*h);
+		
+	}
+
+	@Override
+	public void colour() {
+		// TODO Auto-generated method stub
+		System.out.println("colouring the triangle as grey");
+		
+		
+	}
+	
+}
+ class circle implements shape{
+	 int r;
+	 public circle(int r){
+		 this.r=r;
+	 }
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing a circle!!!");
+		
+	}
+
+	@Override
+	public void area() {
+		// TODO Auto-generated method stub
+		System.out.println("area of circle = "+3.14*r*r);
+		
+	}
+
+	@Override
+	public void colour() {
+		// TODO Auto-generated method stub
+		System.out.println("colouring the circle as cyan");
+		
+	}
+ }
+	 
+class line implements shape{
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("Drawing a line!!!");
+		
+	}
+
+	@Override
+	public void area() {
+		// TODO Auto-generated method stub
+		System.out.println("area of line is always undefined");
+	}
+
+	@Override
+	public void colour() {
+		// TODO Auto-generated method stub
+		System.out.println("colouring the line as blue");
+		
+		
+	}
+	
+
+ }
