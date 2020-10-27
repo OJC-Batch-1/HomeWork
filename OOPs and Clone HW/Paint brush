@@ -1,0 +1,151 @@
+public class Circle {
+	private double radius;
+	final double pi  = 3.14;
+	Circle(double radius){
+		this.radius = radius;
+	}
+	double getRadius() {
+		return radius;
+	}
+	void draw() {
+		System.out.println(" Drawing Circle ");
+	}
+	void area() {
+		System.out.println("Area of the circle is " + (pi*radius*radius ));
+	}
+}
+public class Triangle {
+	private double s1,s2,s3;
+	
+	Triangle(double s1, double s2, double s3){
+		this.s1 = s1;
+		this.s2 = s2;
+		this.s3 = s3;
+	}
+	double getSide1() {
+		return s1;
+	}
+	double getSide2() {
+		return s2;
+	}
+	double getSide3() {
+		return s3;
+	}
+	void draw() {
+		System.out.println(" Drawing Triangle ");
+	}
+	void area() {
+		double semi = (s1 + s2 + s3)/2;
+		double area = Math.sqrt(semi*(semi - s1)*(semi - s2)*(semi - s3));
+		System.out.println("Area of the triangle is" + area);
+	}
+
+
+}public class Line {
+	private double length;
+	
+	Line(double length){
+		this.length = length;
+	}
+	double getLength() {
+		return length;
+	}
+	void draw() {
+		System.out.println(" Drawing Line ");
+	}
+	
+}
+public class Rectangle {
+	private double length,breadth;
+	
+	Rectangle(double length,double breadth){
+		this.breadth = breadth;
+		this.length = length;
+	}
+	double getLength() {
+		return length;
+	}
+	double getBreadth() {
+		return breadth;
+	}
+	void draw() {
+		System.out.println(" Drawing Rectangle ");
+	}
+	void area() {
+		System.out.println("Area of the rectangle is"+area);
+	}
+
+
+}import java.util.Scanner;
+
+public class Driver {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(" Welcome to paint brush ");
+		System.out.println();
+		int choice,flag = 1;
+		do {
+		System.out.println("select your choice : ");
+		System.out.println("\t1.Circle\n\t2.Rectangle\n\t3.Triangle\n\t4.Line");
+		System.out.print("Enter your choice : ");
+		choice = sc.nextInt();
+		System.out.println();
+		
+		switch(choice) 
+		{	case 1: System.out.print("Enter value for radius  : ");
+					double r = sc.nextDouble();
+					Circle c = new Circle(r);
+					c.draw();	c.area();	color(c,sc);
+					System.out.println();
+					break;
+		case 2: System.out.print("Enter value for length  : ");
+				double l = sc.nextDouble();
+				System.out.print("Enter value for breadth  : ");
+				double b = sc.nextDouble();
+				Rectangle rect = new Rectangle(l,b);
+				rect.draw();	rect.area();	color(rect,sc);
+				System.out.println();
+				break;
+		case 3: System.out.print("Enter value for side 1 : ");
+				double s1 = sc.nextDouble();
+				System.out.print("Enter value for side 2 : ");
+				double s2 = sc.nextDouble();
+				System.out.print("Enter value for side 3 : ");
+				double s3 = sc.nextDouble();
+				Triangle tria = new Triangle(s1, s2, s3);
+				tria.draw();	tria.area();	color(tria, sc);
+				System.out.println();
+				break;
+		case 4: System.out.print("Enter value for length : ");
+				double m = sc.nextDouble();
+				Line lm = new Line(m);
+				lm.draw();		color(lm,sc);
+				System.out.println();	
+				break;
+		default:System.out.println("Invalid choice. \n.");	
+		}
+		
+		System.out.println("\tType 1 for yes\n\tType 0 for No");
+		System.out.print("Do you wish to continue ? : ");
+		flag = sc.nextInt();
+		}
+		
+		while(flag == 1);
+		{
+			System.out.println(" Thank You for using. ");
+		}
+		sc.close();
+	}
+	
+	static void color (Object obj, Scanner sc) {
+		System.out.println("Do you want to fill colour? If yes, then type name of colour.Else, type no. ");
+		System.out.print("Response : ");
+		String resp = sc.next();
+		if(resp == "no")
+			System.out.println("No colour has been added.");
+		else
+			System.out.println(resp+" color has been added in "+obj.getClass().getName());
+		
+	}
+
+}
