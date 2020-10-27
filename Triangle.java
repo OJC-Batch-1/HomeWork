@@ -1,34 +1,34 @@
-package ClassProgram;
+package com.design;
 
-import java.util.Scanner;
+public class Triangle implements Shape {
 
-public class Triangle {
+	double side1, side2, side3;
 
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter length of first side : ");
-		float a = sc.nextFloat();
-		System.out.print("Enter length of second side : ");
-		float b = sc.nextFloat();
-		System.out.print("Enter length of third side : ");
-		float c = sc.nextFloat();
-
-		float area = getArea(a, b, c);
-		System.out.println(String.format("Area of Triangle : %.2f", area));
-
-		float perimeter = getPerimeter(a, b, c);
-		System.out.println(String.format("Perimeter of Triangle : %.2f", perimeter));
-
+	public Triangle(double side1, double side2, double side3) {
+		this.side1 = side1;
+		this.side2 = side2;
+		this.side3 = side3;
 	}
 
-	private static float getArea(float a, float b, float c) {
-		float s = getPerimeter(a, b, c) / 2;
-		return (float) Math.sqrt(s * (s - a) * (s - b) * (s - c));
+	@Override
+	public void draw() {
+		System.out.println("Drawing Triangle");
 	}
 
-	private static float getPerimeter(float a, float b, float c) {
-		return (a + b + c);
+	@Override
+	public void getArea() {
+		double s = getPerimeter(side1, side2, side3);
+		double area = (double) Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+		System.out.println("Area of Triangle : " + area);
+	}
+
+	public static double getPerimeter(double side1, double side2, double side3) {
+		return (side1 + side2 + side3) / 2;
+	}
+
+	@Override
+	public void fillColour() {
+		System.out.println("Colouring Triangle as Blue\n");
 	}
 
 }

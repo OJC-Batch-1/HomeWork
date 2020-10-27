@@ -1,33 +1,28 @@
-package ClassProgram;
+package com.design;
 
-import java.util.Scanner;
+public class Rectangle implements Shape {
 
-public class Rectangle {
+	int length, breadth;
 
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-
-		System.out.print("Enter length and breadth of rectangle : ");
-		float length = sc.nextInt();
-		float breadth = sc.nextInt();
-
-		Rectangle rect = new Rectangle();
-
-		float area = rect.getArea(length, breadth);
-		System.out.printf(String.format("Area of rectangle : %.2f\n", area));
-
-		float perimeter = rect.getPerimeter(length, breadth);
-		System.out.printf(String.format("Perimeter of rectangle : %.2f", perimeter));
-
+	public Rectangle(int length, int breadth) {
+		this.length = length;
+		this.breadth = breadth;
 	}
 
-	private float getArea(float length, float breadth) {
-		return (length * breadth);
+	@Override
+	public void draw() {
+		System.out.println("Drawing Rectangle");
 	}
 
-	private float getPerimeter(float length, float breadth) {
-		return 2 * (length + breadth);
+	@Override
+	public void getArea() {
+		int area = length * breadth;
+		System.out.println("Area of Rectangle : " + area);
+	}
+
+	@Override
+	public void fillColour() {
+		System.out.println("Colouring Rectangle as Yellow\n");
 	}
 
 }
