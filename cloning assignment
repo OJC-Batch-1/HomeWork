@@ -1,0 +1,111 @@
+public class Homework {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		
+		Address ad1=new Address("gaya","bodh gaya",823001,"bihar");
+		Address add1 = new Address("kolkata","chingrighata", 700012, "west bengal");
+		Address add2 = new Address("gaya","manpur", 823003, "bihar");
+		Account acc1=new Account("SBI",1000000,"current");
+		Account ac1 = new Account("uco bank", 1000001, "Salaried");
+		Account ac2 = new Account("bank of baroda", 1000002, "saving");
+		Employee emp1 = new Employee(199,"mohammed Saqulain",30,"ass. manager",75000,ad1,acc1);
+    	Employee sunil = new Employee(200, "raj",29,"TA",65000, add1, ac1);
+		Employee emp2 = new Employee(201, "pankaj", 36, "Manager", 80000, add2, ac2);
+		boolean b1 = sunil.equals(emp2);
+		System.out.println("comparing the objects based on primitive properties = " +b1);
+		
+		
+		boolean b2=emp1.getAddress().equals(emp2.getAddress());
+		System.out.println("comparing the address of both the employee = " +b2);
+
+		Employee rajiv = (Employee) sunil.clone();
+		Employee Ajay= rajiv.cloneDeep(); 	
+		System.out.println("comparing the address of both sunil and rajiv = " +sunil.getAddress().equals(rajiv.getAddress()));
+		System.out.println("comparing the address of both ajay and sunil = " +Ajay.getAddress().equals(sunil.getAddress()));
+		
+	}
+
+}
+
+class Employee implements Cloneable{
+	private int id;
+	private String name;
+	private int age;
+	private String designation;
+	private double salary;
+	
+	private Address address;
+	
+	private Account acc;
+	
+	public Employee(int id, String name, int age, String designation, double salary, Address address, Account acc) {
+		// TODO Auto-generated constructor stub
+		this.id = id;
+		this.name = name;
+		this.designation = designation;
+		this.salary = salary;
+		this.address = address;
+		this.acc = acc;
+		
+	}
+	
+	
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
+	public void setAddress(Address address) {
+		this.address =address;
+	}
+	
+	public Address getAddress() {
+		return address;
+	}
+	
+	
+	public Employee cloneDeep() throws CloneNotSupportedException {
+		Address newAddress = (Address) this.address.clone();
+		Employee ajayEmployee = (Employee) super.clone();
+		ajayEmployee.setAddress(newAddress);
+		return ajayEmployee;
+		
+	}
+	
+	
+}
+
+
+class Address implements Cloneable{
+	private String firstLine;
+	private String secondLine;
+	private int zipCode;
+	private String state;
+	
+	public Address(String firstLine, String secondLine, int zipCode, String state) {
+		// TODO Auto-generated constructor stub
+		this.firstLine=firstLine;
+		this.secondLine = secondLine;
+		this.zipCode = zipCode;
+		this.state=state;
+	}
+	
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+		
+	}
+}
+
+class Account implements Cloneable{
+	private String bankName;
+	private long accNo;
+	private String accType; //Saving, Sarary, current
+	
+	public Account(String bankName, long accNo, String accType) {
+		// TODO Auto-generated constructor stub
+		this.bankName = bankName;
+		this.accNo =accNo;
+		this.accType=accType;
+		
+	}
+	
+}
