@@ -1,0 +1,106 @@
+package Practice;
+
+class Employee implements Cloneable{
+	private int id;
+	private String name;
+	private int age;
+	private String designation;
+	private double salary;
+	
+	private Address address;
+	
+	private Account acc;
+	
+	public Employee(int id, String name, int age, String designation, double salary, Address address, Account acc) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.designation = designation;
+		this.salary = salary;
+		this.address = address;
+		this.acc = acc;
+	}
+	public boolean equals(Employee ee) {
+		if(ee == null) return false;
+		if((this.id == ee.id) && (this.name.equals(ee.name)) && (this.age == ee.age) && (this.designation.equals(ee.designation)) && (this.salary == ee.salary)) {
+			return true;
+		}
+		return false;
+	}
+
+	public Object clone() throws CloneNotSupportedException{
+	    return super.clone();
+    }
+	public void setAddress(Address newAddress) {
+		this.address = address;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public Employee cloneDeep() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		Address newAddress = (Address)this.address.clone();
+		Employee Ajayemp = (Employee)super.clone();
+		Ajayemp.setAddress(newAddress);
+		return Ajayemp;
+	}
+	
+}
+
+class Address implements Cloneable{
+	private String firstLine;
+	private String secondLine;
+	private int zipCode;
+	private String state;
+	
+	public Address(String firstLine, String secondLine, int zipCode, String state) {
+		this.firstLine = firstLine;
+		this.secondLine = secondLine;
+		this.zipCode = zipCode;
+		this.state = state;
+	}
+	public Object clone() throws CloneNotSupportedException{
+	    return super.clone();
+    }
+
+}
+
+class Account implements Cloneable{
+	private String bankName;
+	private long accNo;
+	private String accType; //Saving, Salary, Current
+	
+	public Account(String bankName, long accNo, String accType) {
+		this.bankName = bankName;
+		this.accNo = accNo;
+		this.accType = accType;
+	}
+	public Object clone() throws CloneNotSupportedException{
+	    return super.clone();
+    }
+}
+
+
+public class HomeWork {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		
+		Address address1 = new Address("#30, abc Layout", "RK Main Road", 560022, "Karnatka");
+		Address address2 = new Address("New Garia", "KN Road", 700135, "Kolkata");
+		Account acc1 = new Account("RBI", 3999222, "Saving");
+		Account acc2 = new Account("CBI", 5626641, "Salary");
+		
+		Employee Sunil = new Employee(10, "Sunil", 20, "Student", 5000, address1, acc1);
+		Employee e2 = new Employee(11, "Raju", 22, "Student", 10000, address2, acc2);
+		
+		System.out.println(Sunil==e2);                //1
+		System.out.println(Sunil.equals(e2));         //2
+		
+		Employee Rajiv = (Employee)Sunil.clone();     //3
+		Employee Ajay = Rajiv.cloneDeep();            //4
+	    
+		System.out.println("comparing the address of both sunil and rajiv = " +Sunil.getAddress().equals(Rajiv.getAddress()));
+		System.out.println("comparing the address of both ajay and sunil = " +Ajay.getAddress().equals(Sunil.getAddress()));
+        }
+
+}
