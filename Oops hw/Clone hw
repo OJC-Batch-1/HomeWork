@@ -65,7 +65,7 @@ class Address implements Cloneable{
 
 }
 
-class Account implements Cloneable{
+class Account {
 	private String bankName;
 	private long accNo;
 	private String accType; //Saving, Salary, Current
