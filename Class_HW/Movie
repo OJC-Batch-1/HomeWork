@@ -1,0 +1,76 @@
+package Practice;
+
+public class movie_class {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Movie m1 = new Movie("Parasite","Goyang Aqua","PG13");
+        Movie m2 = new Movie("Lion King","Walt Disney");
+//-----------(d)------------
+        Movie m3 = new Movie("Casino Royale","Eon Productions","PG13");
+        Movie m4 = new Movie("Unlock","Fox Studio","PG");
+        Movie m5 = new Movie("Race","T-series");
+
+        Movie[] movies = {m1,m2,m3,m4,m5};
+        Movie[] newMovies = m1.getPG(movies);
+        System.out.println("------PG rating movies------");
+        m1.print(newMovies);
+        }
+        
+        
+        
+    }
+
+class Movie{
+    private String title;
+    private String studio;
+    private String rating;
+//-------------(a)---------
+    public Movie(String title, String studio, String rating){
+        this.title = title;
+        this.studio = studio;
+        this.rating = rating;
+    }
+
+//-------------(b)----------
+
+    public Movie(String title, String studio){
+        this.title = title;
+        this.studio = studio;
+        this.rating = "PG";
+    }
+
+//------------(c)------------
+
+    public Movie[] getPG(Movie[] movie) {
+    	Movie[] newMovie = new Movie[movie.length];
+    	int count = 0;
+    	for(int i=0;i<movie.length;i++) {
+    		Movie m = movie[i];
+    		if(m.rating == "PG") {
+    			newMovie[count] = m;
+    			count++;
+    		}
+    	}
+    	Movie[] newMov = new Movie[count];
+    	for(int i=0;i<count;i++) {
+    		newMov[i] = newMovie[i];
+    	}
+    	return newMov;
+    }
+    
+    public void print(Movie[] movies) {
+		for(Movie m : movies) {
+			if(m != null)
+				System.out.println(m);
+		}
+	}
+
+    
+    public String toString() {
+		return "Movie[Title : "+title+" Studio : "+studio+" Rating : "+rating+"]";
+    	
+    	
+    }
+}
+    
